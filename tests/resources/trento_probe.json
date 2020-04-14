@@ -1,0 +1,43 @@
+{
+  "dataset_reader": {
+    "type": "dialogue_features",
+    "lazy": true,
+    "dialogue_features_path": "data/comp_guesswhat/probes/glove/",
+    "attribute_vectors_path": "data/vg_data/vectors/",
+    "dataset_type": "location"
+  },
+  "train_data_path": "../glaleti/data/guesswhat.train.jsonl.gz",
+  "validation_data_path": "../glaleti/data/gw_train.jsonl",
+  "model": {
+    "type": "linear_probe",
+    "hidden_state_dim": 300,
+    "output_dim": 5
+    //abstract: 2003
+  },
+  "vocabulary": {
+    "directory_path": "probes/vocab"
+  },
+  "iterator": {
+    "type": "basic",
+    "batch_size": 16
+  },
+  "trainer": {
+    "num_epochs": 100,
+    "cuda_device": -1,
+    "patience": 5,
+    "validation_metric": "+accuracy_0.75",
+    "optimizer": {
+      "type": "adam",
+      "betas": [
+        0.9,
+        0.9
+      ]
+    },
+    "learning_rate_scheduler": {
+      "type": "reduce_on_plateau",
+      "factor": 0.5,
+      "mode": "max",
+      "patience": 5
+    }
+  }
+}

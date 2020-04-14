@@ -1,0 +1,32 @@
+{
+  "dataset_reader": {
+    "type": "dialogue_features",
+    "lazy": true,
+    "dialogue_features_path": "data/comp_guesswhat/probes/glove/",
+    "attribute_vectors_path": "data/vg_data/vectors/",
+    "dataset_type": "location"
+  },
+  "train_data_path": "data/comp_guesswhat/comp_guesswhat.train.jsonl.gz",
+  "model": {
+    "type": "random_probe",
+    "output_dim": 5
+  },
+  "vocabulary": {
+    "directory_path": "probes/vocab"
+  },
+  "iterator": {
+    "type": "basic",
+    "batch_size": 16
+  },
+  "trainer": {
+    "num_epochs": 1,
+    "cuda_device": -1,
+    "optimizer": {
+      "type": "adam",
+      "betas": [
+        0.9,
+        0.9
+      ]
+    }
+  }
+}
