@@ -50,8 +50,8 @@ We have a single "npy" file for every dialogue. The file contains the features f
 
 The features used for the experiments can be found at the following links:
 
-- [attributes]()
-- [dialogue state features]()
+- [attributes](https://www.dropbox.com/s/h5vg01nx2ai5588/compguesswhat_attributes_vectors.zip?dl=0)
+- [dialogue state features](https://www.dropbox.com/s/xszhmejs88v3af6/compguesswhat_probing_features.zip?dl=0)
 
 In the configuration files we assume that all the dialogue state features are
 contained in a folder `data/comp_guesswhat/probes` whereas the attribute features
