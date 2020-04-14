@@ -46,6 +46,17 @@ of the object id represents the position in the corresponding attribute vectors.
 
 We have a single "npy" file for every dialogue. The file contains the features for the dialogue target object.
 
+### Download links
+
+The features used for the experiments can be found at the following links:
+
+- [attributes]()
+- [dialogue state features]()
+
+In the configuration files we assume that all the dialogue state features are
+contained in a folder `data/comp_guesswhat/probes` whereas the attribute features
+are stored in a folder `data/vg_data/vectors/`.
+
 ## Run experiments
 
 In order to train the probing classifiers we use the AllenNLP command-line interface. For instance, in order 
