@@ -1,3 +1,4 @@
+import gzip
 import json
 import os
 from typing import Iterable
@@ -7,7 +8,23 @@ from allennlp.data import DatasetReader, Instance
 from allennlp.data.fields import ArrayField, MetadataField
 from allennlp.data.token_indexers import SingleIdTokenIndexer
 
-from guesswhat_utils import read_raw_dataset_games
+
+def read_raw_dataset_games(file_path, successful_only=False):
+    if file_path.endswith(".gz"):
+        with gzip.open(file_path) as f:
+            for line in f:
+                line = line.decode("utf-8")
+                game = json.loads(line.strip("\n"))
+
+                if not successful_only or (successful_only and game["status"] == "success"):
+                    yield game
+    else:
+        with open(file_path) as f:
+            for line in f:
+                game = json.loads(line.strip("\n"))
+
+                if not successful_only or (successful_only and game["status"] == "success"):
+                    yield game
 
 
 def get_split_id(dataset_path):
