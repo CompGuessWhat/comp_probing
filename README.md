@@ -75,7 +75,24 @@ the model files in the directory `probes/situated/devries_sl`.
 Please remember to cite the following paper if you're using this code:
 
 ```
-CompGuessWhat?! bibtex here
+@inproceedings{suglia-etal-2020-compguesswhat,
+    title = "{C}omp{G}uess{W}hat?!: A Multi-task Evaluation Framework for Grounded Language Learning",
+    author = "Suglia, Alessandro  and
+      Konstas, Ioannis  and
+      Vanzo, Andrea  and
+      Bastianelli, Emanuele  and
+      Elliott, Desmond  and
+      Frank, Stella  and
+      Lemon, Oliver",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.acl-main.682",
+    pages = "7625--7641",
+    abstract = "Approaches to Grounded Language Learning are commonly focused on a single task-based final performance measure which may not depend on desirable properties of the learned hidden representations, such as their ability to predict object attributes or generalize to unseen situations. To remedy this, we present GroLLA, an evaluation framework for Grounded Language Learning with Attributes based on three sub-tasks: 1) Goal-oriented evaluation; 2) Object attribute prediction evaluation; and 3) Zero-shot evaluation. We also propose a new dataset CompGuessWhat?! as an instance of this framework for evaluating the quality of learned neural representations, in particular with respect to attribute grounding. To this end, we extend the original GuessWhat?! dataset by including a semantic layer on top of the perceptual one. Specifically, we enrich the VisualGenome scene graphs associated with the GuessWhat?! images with several attributes from resources such as VISA and ImSitu. We then compare several hidden state representations from current state-of-the-art approaches to Grounded Language Learning. By using diagnostic classifiers, we show that current models{'} learned representations are not expressive enough to encode object attributes (average F1 of 44.27). In addition, they do not learn strategies nor representations that are robust enough to perform well when novel scenes or objects are involved in gameplay (zero-shot best accuracy 50.06{\%}).",
+}
 ```
 
  
